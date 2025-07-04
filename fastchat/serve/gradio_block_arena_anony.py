@@ -175,7 +175,7 @@ def share_click(state0, state1, model_selector0, model_selector1, request: gr.Re
         )
 
 
-SAMPLING_WEIGHTS = {}
+SAMPLING_WEIGHTS = {"GPT3.5":1 , "vicuna-13b-v1.5":1}
 
 # target model sampling weights will be boosted.
 BATTLE_TARGETS = {}
@@ -311,7 +311,7 @@ def add_text(
     all_conv_text = (
         all_conv_text_left[-1000:] + all_conv_text_right[-1000:] + "\nuser: " + text
     )
-    flagged = moderation_filter(all_conv_text, model_list, do_moderation=True)
+    flagged = moderation_filter(all_conv_text, model_list, do_moderation=False)
     if flagged:
         logger.info(f"violate moderation (anony). ip: {ip}. text: {text}")
         # overwrite the original text
