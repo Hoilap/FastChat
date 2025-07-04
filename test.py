@@ -4,7 +4,7 @@ import json
 
 API_KEY = "sk-5q7j1BBv9b9Ousv9i6sfVGhlQi5BSQp0P4O3a6ezCQsAz0az"  # Replace with your actual key
 API_BASE = "https://api.theb.ai/v1"
-MODEL = "gpt-3.5-turbo"
+MODEL = "llama-3.1-8b-chat"
 
 def test_openai_api_direct():
     url = f"{API_BASE}/chat/completions"
